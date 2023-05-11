@@ -6,7 +6,7 @@ let btnB = false
 
 basic.forever(function() {
     if (btnA == true) {
-        PCAmotor.MotorRun(PCAmotor.Motors.M1, 250)
+        PCAmotor.MotorRun(PCAmotor.Motors.M1, -250)
     } else {
         PCAmotor.MotorStop(PCAmotor.Motors.M1)
     }
