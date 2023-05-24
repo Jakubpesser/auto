@@ -3,10 +3,11 @@ radio.setFrequencyBand(7)
 
 let btnA = false
 let btnB = false
+let btnLOGO = false
 
 basic.forever(function() {
     if (btnA == true) {
-        PCAmotor.MotorRun(PCAmotor.Motors.M1, -250)
+        PCAmotor.MotorRun(PCAmotor.Motors.M1, -195)
     } else {
         PCAmotor.MotorStop(PCAmotor.Motors.M1)
     }
@@ -14,6 +15,10 @@ basic.forever(function() {
         PCAmotor.MotorRun(PCAmotor.Motors.M4, 250)
     } else {
         PCAmotor.MotorStop(PCAmotor.Motors.M4)
+    }
+    if (btnLOGO == true) {
+        PCAmotor.MotorRun(PCAmotor.Motors.M4, -250)
+        PCAmotor.MotorRun(PCAmotor.Motors.M1, 195)
     }
 })
 
@@ -23,5 +28,8 @@ radio.onReceivedValue(function(name: string, value: number) {
     }
     if (name == "btnB") {
         btnB = (value == 1)
+    }
+    if (name == "btnLOGO") {
+        btnLOGO = (value == 1)
     }
 })
