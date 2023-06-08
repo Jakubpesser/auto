@@ -6,19 +6,19 @@ let btnB = false
 let btnLOGO = false
 
 basic.forever(function() {
-    if (btnA == true) {
-        PCAmotor.MotorRun(PCAmotor.Motors.M1, -195)
+    if (btnB == true) {
+        PCAmotor.MotorRun(PCAmotor.Motors.M1, -226)
     } else {
         PCAmotor.MotorStop(PCAmotor.Motors.M1)
     }
-    if (btnB == true) {
+    if (btnA == true) {
         PCAmotor.MotorRun(PCAmotor.Motors.M4, 250)
     } else {
         PCAmotor.MotorStop(PCAmotor.Motors.M4)
     }
     if (btnLOGO == true) {
         PCAmotor.MotorRun(PCAmotor.Motors.M4, -250)
-        PCAmotor.MotorRun(PCAmotor.Motors.M1, 195)
+        PCAmotor.MotorRun(PCAmotor.Motors.M1, 226)
     }
 })
 
